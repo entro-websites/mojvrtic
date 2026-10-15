@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moj Vrtić Požarevac - upis u jasle, vrtić i pripremu za školu</title>
+<meta name="description" content="Moj Vrtić Požarevac je privatna akreditovana predškolska ustanova i prvi sportski vrtić u gradu. Upiši dete, iskoristi subvenciju grada i zakaži obilazak.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#00aac2;
+    --accent-dark:#00808f;
+    --accent-darker:#005c68;
+    --accent-soft:#e3f7fa;
+    --accent-soft-2:#f3fbfc;
+    --accent-glow:rgba(0,170,194,0.16);
+    --bg:#fffdf8;
+    --text:#172a2c;
+    --text-muted:rgba(23,42,44,0.72);
+    --text-faint:rgba(23,42,44,0.52);
+    --radius-btn:999px;
+    --radius-card:28px;
+    --radius-img:20px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Nunito Sans', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{margin:0; padding:0; list-style:none;}
+  h1,h2,h3{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    color:var(--text);
+    margin:0 0 16px 0;
+    line-height:1.15;
+  }
+  p{margin:0 0 16px 0;}
+  p.lead, .section-sub{color:var(--text-muted);}
+
+  .wrap{
+    max-width:1280px;
+    margin:0 auto;
+    padding-left:24px;
+    padding-right:24px;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Nunito Sans', sans-serif;
+    font-weight:800;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--accent-dark);
+    background:var(--accent-soft);
+    padding:8px 18px;
+    border-radius:var(--radius-btn);
+    margin-bottom:20px;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:15px 30px;
+    border-radius:var(--radius-btn);
+    font-family:'Nunito Sans', sans-serif;
+    font-weight:800;
+    font-size:16px;
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#ffffff;
+  }
+  .btn-primary:hover{
+    background:var(--accent-dark);
+    box-shadow:0 14px 30px -12px var(--accent-glow);
+    transform:translateY(-2px);
+  }
+  .btn-outline{
+    background:transparent;
+    border-color:var(--accent);
+    color:var(--accent-darker);
+  }
+  .btn-outline:hover{
+    background:var(--accent-soft);
+    transform:translateY(-2px);
+  }
+
+  .icon{
+    width:28px;
+    height:28px;
+    flex-shrink:0;
+  }
+  .icon svg{
+    width:100%;
+    height:100%;
+    stroke:var(--accent-dark);
+    fill:none;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+
+  /* ---------- HEADER ---------- */
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,253,248,0.92);
+    border-bottom:1px solid rgba(0,170,194,0.12);
+    transition:background .3s ease, backdrop-filter .3s ease;
+  }
+  .site-header.scrolled{
+    backdrop-filter:blur(10px);
+    background:rgba(255,253,248,0.75);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:14px;
+    padding-bottom:14px;
+    position:relative;
+  }
+  .logo img{
+    height:48px;
+    width:auto;
+  }
+  .nav-toggle-input{display:none;}
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:36px;
+    height:30px;
+    cursor:pointer;
+    z-index:120;
+  }
+  .hamburger span{
+    display:block;
+    height:3px;
+    width:100%;
+    background:var(--accent-darker);
+    border-radius:4px;
+    transition:transform .25s ease, opacity .25s ease;
+  }
+  .main-nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+  }
+  .main-nav a{
+    font-weight:700;
+    font-size:15px;
+    color:var(--text);
+    transition:color .2s ease;
+  }
+  .main-nav a:hover{color:var(--accent-dark);}
+  .main-nav .nav-cta{
+    padding:12px 24px;
+    font-size:14px;
+  }
+
+  @media (max-width:991px){
+    .hamburger{display:flex;}
+    .main-nav{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:#fffefb;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:4px;
+      padding:12px 24px 24px 24px;
+      display:none;
+      border-bottom:1px solid rgba(0,170,194,0.15);
+      box-shadow:0 18px 30px -20px rgba(0,0,0,0.18);
+    }
+    .main-nav a{
+      width:100%;
+      padding:12px 0;
+      border-bottom:1px solid rgba(0,170,194,0.08);
+    }
+    .main-nav .nav-cta{
+      border:none;
+      margin-top:10px;
+      width:100%;
+      text-align:center;
+    }
+    .nav-toggle-input:checked ~ .main-nav{
+      display:flex;
+    }
+    .nav-toggle-input:checked ~ .hamburger span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+    .nav-toggle-input:checked ~ .hamburger span:nth-child(2){opacity:0;}
+    .nav-toggle-input:checked ~ .hamburger span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{
+    padding-top:96px;
+    padding-bottom:96px;
+  }
+  @media (max-width:768px){
+    section{
+      padding-top:64px;
+      padding-bottom:64px;
+    }
+  }
+  .section-head{
+    max-width:640px;
+    margin-bottom:56px;
+  }
+  .section-head.center{
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+  .section-head p{
+    max-width:60ch;
+  }
+  .section-head.center p{margin-left:auto;margin-right:auto;}
+
+  .reveal{
+    opacity:1;
+    transform:translateY(14px);
+    transition:transform .7s cubic-bezier(.22,.61,.36,1), opacity .7s ease;
+  }
+  .reveal.in-view{
+    transform:translateY(0);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding-top:72px;
+    padding-bottom:72px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-120px;
+    right:-120px;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:radial-gradient(circle, var(--accent-glow) 0%, rgba(0,170,194,0) 70%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+  .hero h1{
+    font-size:clamp(34px, 5vw, 54px);
+    font-weight:800;
+  }
+  .hero-sub{
+    font-size:18px;
+    color:var(--text-muted);
+    max-width:46ch;
+    margin-bottom:32px;
+  }
+  .hero-media{
+    border-radius:var(--radius-card);
+    overflow:hidden;
+    border:1px solid rgba(0,170,194,0.18);
+    box-shadow:0 30px 60px -36px rgba(0,90,100,0.35);
+  }
+  .hero-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    aspect-ratio:4/3.4;
+  }
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr; gap:36px;}
+    .hero-media{order:-1;}
+  }
+
+  /* ---------- PAIN INTRO ---------- */
+  .pain{
+    padding-top:56px;
+    padding-bottom:56px;
+    border-top:1px solid rgba(0,170,194,0.12);
+    border-bottom:1px solid rgba(0,170,194,0.12);
+    background:var(--accent-soft-2);
+  }
+  .pain .wrap{
+    max-width:800px;
+  }
+  .pain p{
+    font-family:'Baloo 2', sans-serif;
+    font-size:clamp(20px, 2.6vw, 26px);
+    font-weight:600;
+    color:var(--text);
+    margin:0;
+  }
+
+  /* ---------- AGE CARDS ---------- */
+  .age-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .age-card{
+    background:#ffffff;
+    border:1px solid rgba(0,170,194,0.16);
+    border-radius:var(--radius-card);
+    padding:36px 30px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .age-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 28px 50px -34px rgba(0,90,100,0.3);
+  }
+  .age-card .icon{
+    width:48px;
+    height:48px;
+    margin-bottom:20px;
+    background:var(--accent-soft);
+    border-radius:16px;
+    padding:10px;
+  }
+  .age-card h3{font-size:21px; margin-bottom:8px;}
+  .age-card .age-range{
+    font-weight:800;
+    color:var(--accent-dark);
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-bottom:12px;
+    display:block;
+  }
+  .age-card p{color:var(--text-muted); margin:0; font-size:15px;}
+
+  @media (max-width:900px){
+    .age-grid{grid-template-columns:1fr; }
+  }
+
+  /* ---------- STEPS ---------- */
+  .steps-wrap{
+    background:var(--accent-soft-2);
+    border-radius:var(--radius-card);
+    padding:48px 40px;
+  }
+  .steps-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
+  }
+  .step{
+    position:relative;
+    padding-left:4px;
+  }
+  .step-number{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    margin-bottom:16px;
+  }
+  .step h3{font-size:18px; margin-bottom:8px;}
+  .step p{color:var(--text-muted); font-size:15px; margin:0;}
+
+  @media (max-width:900px){
+    .steps-wrap{padding:36px 24px;}
+    .steps-grid{grid-template-columns:1fr; gap:28px;}
+  }
+
+  /* ---------- TWO COL: DOC + RADNO VREME ---------- */
+  .two-col{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:32px;
+    align-items:stretch;
+  }
+  .panel{
+    background:#ffffff;
+    border:1px solid rgba(0,170,194,0.16);
+    border-radius:var(--radius-card);
+    padding:40px;
+  }
+  .doc-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    padding:12px 0;
+    border-bottom:1px solid rgba(0,170,194,0.1);
+    font-size:15.5px;
+    color:var(--text);
+  }
+  .doc-list li:last-child{border-bottom:none;}
+  .doc-list .icon{width:22px;height:22px;margin-top:2px;}
+
+  .hours-panel{
+    background:var(--accent);
+    color:#ffffff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .hours-panel .icon svg{stroke:#ffffff;}
+  .hours-panel h3{color:#ffffff; font-size:22px;}
+  .hours-big{
+    font-family:'Baloo 2', sans-serif;
+    font-size:44px;
+    font-weight:800;
+    margin:10px 0 14px 0;
+  }
+  .hours-panel p{color:rgba(255,255,255,0.9); margin:0; font-size:15px;}
+
+  @media (max-width:900px){
+    .two-col{grid-template-columns:1fr;}
+    .panel{padding:30px;}
+  }
+
+  /* ---------- PROGRAMI ---------- */
+  .programs-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .program-card{
+    border:1px solid rgba(0,170,194,0.16);
+    border-radius:var(--radius-card);
+    padding:30px 26px;
+    background:#ffffff;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .program-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 24px 44px -32px rgba(0,90,100,0.28);
+  }
+  .program-card .icon{
+    width:44px; height:44px;
+    margin-bottom:16px;
+  }
+  .program-card h3{font-size:18px; margin-bottom:8px;}
+  .program-card p{font-size:14.5px; color:var(--text-muted); margin:0;}
+
+  @media (max-width:900px){
+    .programs-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .programs-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- GALERIJA PROSTORA ---------- */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .gallery-item{
+    border-radius:var(--radius-img);
+    overflow:hidden;
+    border:1px solid rgba(0,170,194,0.16);
+  }
+  .gallery-item img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+  }
+  .gallery-caption{
+    padding:14px 16px;
+    font-size:14px;
+    color:var(--text-muted);
+    background:#ffffff;
+  }
+  @media (max-width:900px){
+    .gallery-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- O BRENDU ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+    align-items:center;
+  }
+  .about-visual{
+    position:relative;
+  }
+  .placeholder-box{
+    width:100%;
+    aspect-ratio:4/3.2;
+    border-radius:var(--radius-card);
+    background:repeating-linear-gradient(135deg, #eef2f2, #eef2f2 12px, #e4e9e9 12px, #e4e9e9 24px);
+    border:1px dashed rgba(23,42,44,0.3);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:var(--text-faint);
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    padding:20px;
+  }
+  .about-badge{
+    position:absolute;
+    bottom:-20px;
+    right:-20px;
+    width:96px;
+    height:96px;
+    background:#ffffff;
+    border-radius:50%;
+    border:1px solid rgba(0,170,194,0.2);
+    box-shadow:0 18px 30px -18px rgba(0,90,100,0.35);
+    padding:10px;
+  }
+  .about-text .section-head{margin-bottom:24px;}
+  .about-list{
+    margin-top:24px;
+    display:grid;
+    gap:14px;
+  }
+  .about-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-size:15px;
+    color:var(--text);
+  }
+  .about-list .icon{width:20px;height:20px;margin-top:3px;}
+
+  @media (max-width:900px){
+    .about-grid{grid-template-columns:1fr; gap:40px;}
+    .about-badge{width:76px; height:76px; right:8px;}
+  }
+
+  /* ---------- KONTAKT ---------- */
+  .contact-section{
+    background:var(--accent-soft-2);
+    border-top:1px solid rgba(0,170,194,0.12);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:start;
+  }
+  .contact-info-list{
+    display:grid;
+    gap:20px;
+    margin-bottom:32px;
+  }
+  .contact-info-item{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .contact-info-item .icon{
+    width:26px; height:26px;
+    background:var(--accent-soft);
+    padding:9px;
+    border-radius:12px;
+    width:44px; height:44px;
+  }
+  .contact-info-item strong{
+    display:block;
+    font-family:'Baloo 2', sans-serif;
+    font-size:16px;
+    margin-bottom:2px;
+  }
+  .contact-info-item span, .contact-info-item a{
+    color:var(--text-muted);
+    font-size:15px;
+  }
+  .contact-cta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .map-placeholder{
+    width:100%;
+    aspect-ratio:4/3.4;
+    border-radius:var(--radius-card);
+    background:repeating-linear-gradient(135deg, #eef2f2, #eef2f2 12px, #e4e9e9 12px, #e4e9e9 24px);
+    border:1px dashed rgba(23,42,44,0.3);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:var(--text-faint);
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    padding:20px;
+  }
+
+  @media (max-width:900px){
+    .contact-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding-top:48px;
+    padding-bottom:32px;
+    border-top:1px solid rgba(0,170,194,0.14);
+  }
+  .footer-inner{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+  }
+  .footer-logo img{height:38px;}
+  .footer-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px;
+  }
+  .footer-nav a{
+    font-size:14px;
+    font-weight:700;
+    color:var(--text-muted);
+  }
+  .footer-nav a:hover{color:var(--accent-dark);}
+  .footer-bottom{
+    margin-top:28px;
+    padding-top:20px;
+    border-top:1px solid rgba(0,170,194,0.1);
+    font-size:13px;
+    color:var(--text-faint);
+    text-align:center;
+  }
+
+  @media (max-width:640px){
+    .wrap{padding-left:20px; padding-right:20px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="wrap header-inner">
+    <a href="#home" class="logo">
+      <img src="assets/logo.png" alt="Moj Vrtić Požarevac - predškolska ustanova, logo">
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+    <label for="nav-toggle" class="hamburger" aria-label="Otvori meni">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="main-nav">
+      <a href="#upis">Upis</a>
+      <a href="#programi">Programi</a>
+      <a href="#o-nama">O nama</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#kontakt" class="btn btn-primary nav-cta">Zakaži obilazak</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow">Moj Vrtić Požarevac · Prvi sportski vrtić u gradu</span>
+        <h1>Vrtić u kom tvoje dete raste sigurno, srećno i spremno za školu</h1>
+        <p class="hero-sub">Akreditovana ustanova sa malim grupama, od jaslica do pripreme za školu. Upiši dete kod nas i iskoristi subvenciju grada za privatni vrtić.</p>
+        <a href="#kontakt" class="btn btn-primary">Zakaži obilazak vrtića</a>
+      </div>
+      <div class="hero-media">
+        <img src="assets/00-440x440.jpg" alt="Zgrada vrtića Moj Vrtić u Požarevcu sa terasama i ulazom za decu">
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN INTRO -->
+  <section class="pain">
+    <div class="wrap">
+      <p>Tražiš vrtić gde tvoje dete nije broj u velikoj grupi, nego dete koje vaspitačica poznaje po imenu. Gde se briga o bezbednosti vidi u svakom detalju prostora. I gde upis u privatni vrtić ne znači da gubiš pravo na pomoć grada.</p>
+    </div>
+  </section>
+
+  <!-- UPIS PO UZRASTU -->
+  <section id="upis">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Upis</span>
+        <h2>Upis po uzrastu deteta</h2>
+        <p>Pratimo dete kroz tri programa, od prvih koraka do prvog dana u školi.</p>
+      </div>
+
+      <div class="age-grid">
+        <div class="age-card reveal">
+          <span class="icon">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4Z"/><path d="M5 21c0-3.3 3.1-6 7-6s7 2.7 7 6"/></svg>
+          </span>
+          <span class="age-range">1 - 3 godine</span>
+          <h3>Jaslice</h3>
+          <p>Nega, dnevni ritam spavanja i obroka, i prve igre uz vaspitača koji je uvek u blizini.</p>
+        </div>
+
+        <div class="age-card reveal">
+          <span class="icon">
+            <svg viewBox="0 0 24 24"><path d="M9 20V10a3 3 0 0 1 6 0v10"/><circle cx="12" cy="5" r="2"/><path d="M4 20h16"/></svg>
+          </span>
+          <span class="age-range">3 - 5,5 godina</span>
+          <h3>Vrtićke grupe</h3>
+          <p>Male grupe, vaspitno-obrazovni rad po programu, i dosta vremena na dvorištu i poligonu.</p>
+        </div>
+
+        <div class="age-card reveal">
+          <span class="icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/></svg>
+          </span>
+          <span class="age-range">Priprema za školu</span>
+          <h3>Predškolci</h3>
+          <p>Priprema za prvi razred kroz igru: slova, brojevi, pažnja i samostalnost pre septembra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBVENCIJA 3 KORAKA -->
+  <section id="subvencija">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Subvencija grada</span>
+        <h2>Subvencija grada u 3 koraka</h2>
+        <p>Privatni vrtić ne mora da bude van domašaja. Evo kako roditelji u Požarevcu dobijaju pomoć grada za mesečnu participaciju.</p>
+      </div>
+
+      <div class="steps-wrap reveal">
+        <div class="steps-grid">
+          <div class="step">
+            <span class="step-number">1</span>
+            <h3>Predaš zahtev</h3>
+            <p>Podneseš zahtev za subvenciju privatnog vrtića gradskoj upravi, uz osnovnu dokumentaciju deteta.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">2</span>
+            <h3>Upišeš dete kod nas</h3>
+            <p>Dogovorimo termin, obiđeš prostor i potpišeš ugovor o upisu sa vrtićem.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">3</span>
+            <h3>Plaćaš samo razliku</h3>
+            <p>Grad pokriva deo cene po detetu, ti plaćaš ostatak po važećem cenovniku vrtića.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOKUMENTACIJA + RADNO VREME -->
+  <section id="dokumentacija">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="panel reveal">
+          <span class="eyebrow">Dokumentacija</span>
+          <h2 style="font-size:26px;">Potrebna dokumentacija za upis</h2>
+          <p style="color:var(--text-muted); margin-bottom:20px;">Za upis ti treba šaka papira, ne gomila. Pripremi sledeće pre dolaska:</p>
+          <ul class="doc-list">
+            <li>
+              <span class="icon"><svg viewBox="0 0 24 24"><path d="m5 13 4 4L19 7"/></svg></span>
+              Izvod iz matične knjige rođenih za dete
+            </li>
+            <li>
+              <span class="icon"><svg viewBox="0 0 24 24"><path d="m5 13 4 4L19 7"/></svg></span>
+              Potvrda pedijatra o zdravstvenom stanju
+            </li>
+            <li>
+              <span class="icon"><svg viewBox="0 0 24 24"><path d="m5 13 4 4L19 7"/></svg></span>
+              Potvrda o prebivalištu roditelja
+            </li>
+            <li>
+              <span class="icon"><svg viewBox="0 0 24 24"><path d="m5 13 4 4L19 7"/></svg></span>
+              Potvrda o zaposlenju oba roditelja
+            </li>
+            <li>
+              <span class="icon"><svg viewBox="0 0 24 24"><path d="m5 13 4 4L19 7"/></svg></span>
+              Popunjen obrazac prijave za upis, dobijaš ga kod nas
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel hours-panel reveal">
+          <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <h3>Radno vreme</h3>
+          <div class="hours-big">06 - 17h</div>
+          <p>Radimo svaki radni dan. Dovoljno rano za smenu u 7, dovoljno kasno za posao do 16.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUKATIVNI PROGRAMI -->
+  <section id="programi">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Programi</span>
+        <h2>Edukativni programi uz redovan boravak</h2>
+        <p>Osim redovnog programa, dete kod nas ima i dodatne radionice, uključene u ponudu vrtića.</p>
+      </div>
+
+      <div class="programs-grid">
+        <div class="program-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M8 4a4 4 0 0 1 8 0c0 2-1 3-2 4H10c-1-1-2-2-2-4Z"/><path d="M8 20v-4M16 20v-4M8 16c0-2 1.5-3 4-3s4 1 4 3"/></svg></span>
+          <h3>Dramske radionice</h3>
+          <p>Glumimo, pričamo priče i radimo na govoru pred drugima, kroz igru.</p>
+        </div>
+        <div class="program-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.8 7.3L4 20l1.2-4.2A8.5 8.5 0 1 1 21 11.5Z"/></svg></span>
+          <h3>Logopedske radionice</h3>
+          <p>Logoped prati izgovor i razvoj govora, i radi individualno kad je potrebno.</p>
+        </div>
+        <div class="program-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></svg></span>
+          <h3>Školica sporta</h3>
+          <p>Prvi sportski vrtić u gradu znači da dete svaki dan ima organizovano kretanje i vežbe.</p>
+        </div>
+        <div class="program-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span>
+          <h3>Muzičko igralište</h3>
+          <p>Ritam, pevanje i prvi instrumenti, bez pritiska da dete postane muzičar.</p>
+        </div>
+        <div class="program-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></span>
+          <h3>Strani jezici</h3>
+          <p>Prve reči na stranom jeziku kroz pesmice i igru, ne kroz učenje napamet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROSTOR I OPREMA -->
+  <section id="prostor">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Prostor</span>
+        <h2>Prostor i oprema</h2>
+        <p>Vrtić je u porodičnoj kući pretvorenoj u prostor za decu, sa dvorištem i opremom za igru napolju.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">
+          <img src="assets/00-440x440.jpg" alt="Zgrada vrtića Moj Vrtić sa terasama i ulazom za decu">
+          <div class="gallery-caption">Zgrada vrtića, pogled sa dvorišta</div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="assets/01-440x440.jpg" alt="Ulaz u vrtić sa oslikanom stazom za najmlađe">
+          <div class="gallery-caption">Ulaz, sa stazom oslikanom za decu</div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="assets/02-440x440.jpg" alt="Dvorište vrtića sa ljuljaškama i poligonom za igru">
+          <div class="gallery-caption">Dvorište sa ljuljaškama i poligonom</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O BRENDU -->
+  <section id="o-nama">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="placeholder-box">FOTOGRAFIJA VASPITAČKOG TIMA</div>
+          <img class="about-badge" src="assets/moj_vrtic-logo-transparent-512.png" alt="">
+        </div>
+        <div class="about-text reveal">
+          <div class="section-head">
+            <span class="eyebrow">O nama</span>
+            <h2>Prvi sportski vrtić u Požarevcu</h2>
+          </div>
+          <p>Moj Vrtić je privatna akreditovana predškolska ustanova. Radimo sa jaslenim i vrtićkim grupama, i pripremamo decu za prvi razred.</p>
+          <p>Mali broj dece po grupi znači da vaspitač stigne da primeti svako dete, ne samo grupu u celini. Akreditacija znači da naš program ispunjava iste standarde koje traži i država, uz dodatne sadržaje koje smo sami uveli.</p>
+          <ul class="about-list">
+            <li>
+              <span class="icon"><svg viewBox="0 0 24 24"><path d="m5 13 4 4L19 7"/></svg></span>
+              Akreditovana predškolska ustanova
+            </li>
+            <li>
+              <span class="icon"><svg viewBox="0 0 24 24"><path d="m5 13 4 4L19 7"/></svg></span>
+              Prvi sportski vrtić u Požarevcu
+            </li>
+            <li>
+              <span class="icon"><svg viewBox="0 0 24 24"><path d="m5 13 4 4L19 7"/></svg></span>
+              Male grupe i lični pristup svakom detetu
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT / CTA ZATVARANJE -->
+  <section class="contact-section" id="kontakt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Kontakt</span>
+        <h2>Upiši dete ili samo svrati na razgledanje</h2>
+        <p>Odgovaramo isti dan. Javi se telefonom, mejlom ili dođi lično na adresu vrtića.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2Z"/></svg></span>
+              <div>
+                <strong>Telefon</strong>
+                <a href="tel:0122223456">012/222-345</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:info@mojvrtic.rs">info@mojvrtic.rs</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>
+              <div>
+                <strong>Adresa</strong>
+                <span>Bratstva i jedinstva bb, Požarevac</span>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+              <div>
+                <strong>Radno vreme</strong>
+                <span>Radnim danima, 06 - 17h</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-cta">
+            <a href="tel:0122223456" class="btn btn-primary">Pozovi i zakaži obilazak</a>
+            <a href="mailto:info@mojvrtic.rs" class="btn btn-outline">Pošalji upit mejlom</a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="map-placeholder">MAPA LOKACIJE VRTIĆA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <a href="#home" class="footer-logo">
+        <img src="assets/logo.png" alt="Moj Vrtić Požarevac logo">
+      </a>
+      <nav class="footer-nav">
+        <a href="#upis">Upis</a>
+        <a href="#programi">Programi</a>
+        <a href="#o-nama">O nama</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      © 2024 Moj Vrtić Požarevac. Sva prava zadržana.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // sticky header blur on scroll
+  var header = document.getElementById('site-header');
+  function onScroll(){
+    if(window.scrollY > 12){
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+
+  // close mobile nav on link click
+  var navToggle = document.getElementById('nav-toggle');
+  document.querySelectorAll('.main-nav a').forEach(function(link){
+    link.addEventListener('click', function(){
+      navToggle.checked = false;
+    });
+  });
+
+  // scroll reveal
+  if('IntersectionObserver' in window){
+    var revealEls = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el){ observer.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){
+      el.classList.add('in-view');
+    });
+  }
+</script>
+
+</body>
+</html>
